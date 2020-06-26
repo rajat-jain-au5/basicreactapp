@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+// import axios from 'axios';
+import Posts from './post.json'
+import {BrowserRouter, Route, Redirect} from 'react-router-dom'
+import Blog from './components/Blog';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+export class App extends Component {
+
+
+  render() {
+   
+
+    return (
+      <BrowserRouter>
+      <div className="container">
+        <h1 className="my-5 text-primary text-center">Posts</h1>
+        <Redirect to="/"/>
+       <Route path="/1" />
+          <Route path="/2" />
+          <Route path="/3" />
+
+        <Blog  />
+      </div>
+      </BrowserRouter>
+    )
+  }
 }
 
-export default App;
+export default App
